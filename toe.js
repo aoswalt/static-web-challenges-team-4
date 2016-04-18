@@ -9,6 +9,8 @@ for(var i = 0; i < boxes.length; ++i) {
   }
 }
 
+document.getElementById("again-button").onclick = reset;
+
 function play() {
   var activePlayer = (turn % 2 === 0) ? "x" : "o";
   this.className = activePlayer;
@@ -22,6 +24,10 @@ function play() {
       alert("Draw...");
       gameOver = true;
     }
+  }
+
+  if(gameOver) {
+    document.getElementById("again-button").style.display = "inline";
   }
 }
 
@@ -46,4 +52,13 @@ function isWin() {
 function isMatch(box1, box2, box3) {
   if(box1.className == "" || box2.className == "" || box3.className == "") { return false; }
   return (box1.className == box2.className && box2.className == box3.className);
+}
+
+function reset() {
+  document.getElementById("again-button").style.display = "none";
+  for (var i = boxes.length - 1; i >= 0; i--) {
+    boxes[i].className = "";
+  }
+  turn = 0;
+  gameOver = false;
 }
