@@ -1,0 +1,42 @@
+table {
+  border: 1px solid black;
+}
+
+caption {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+td {
+  border: 1px solid black;
+  width: 5rem;
+  height: 5rem;
+  font-family: sans-serif;
+  font-size: 4rem;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.x {
+  cursor: default;
+}
+
+.x:after {
+  content: "X";
+  color: red;
+}
+
+.o {
+  cursor: default;
+}
+
+.o:after {
+  content: "O";
+  color: blue;
+}
+
+#again-button {
+  display: none;
+}
